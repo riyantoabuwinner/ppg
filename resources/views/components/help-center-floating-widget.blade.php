@@ -82,14 +82,14 @@
          MODAL 2: HELP CENTER OFFLINE (JIKA DI LUAR JAM KERJA)
          ========================================================= --}}
     <div id="modal-help-offline" class="hidden fixed inset-0 z-[99999] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn" role="dialog" aria-modal="true">
-        <div class="bg-white rounded-[20px] max-w-[420px] w-full shadow-2xl relative overflow-hidden flex flex-col">
+        <div class="bg-white dark:bg-slate-900 rounded-[20px] max-w-[420px] w-full shadow-2xl relative overflow-hidden flex flex-col border border-purple-100 dark:border-slate-800">
             {{-- Header Bar --}}
-            <div class="bg-[#243c2c] px-5 py-3.5 flex items-center justify-between">
+            <div class="bg-gradient-to-r from-purple-800 to-indigo-900 px-5 py-3.5 flex items-center justify-between">
                 <div class="flex items-center space-x-2 text-white font-bold text-sm">
-                    <i class="fa-solid fa-headset text-yellow-400"></i>
+                    <i class="fa-solid fa-headset text-amber-400"></i>
                     <span>Help Center PPG (Offline)</span>
                 </div>
-                <button type="button" onclick="closeHelpModals()" class="text-white hover:text-gray-200 transition">
+                <button type="button" onclick="closeHelpModals()" class="text-white/80 hover:text-white transition cursor-pointer">
                     <i class="fa-solid fa-xmark text-lg"></i>
                 </button>
             </div>
@@ -97,48 +97,48 @@
             {{-- Content --}}
             <div class="p-6 flex flex-col items-center">
                 {{-- Moon Icon --}}
-                <div class="w-20 h-20 bg-[#FCE8E8] rounded-full flex items-center justify-center mb-5">
-                    <i class="fa-solid fa-moon text-[#B91C1C] text-3xl"></i>
+                <div class="w-20 h-20 bg-purple-100 dark:bg-purple-900/40 rounded-full flex items-center justify-center mb-5 shadow-inner">
+                    <i class="fa-solid fa-moon text-purple-600 dark:text-purple-400 text-3xl"></i>
                 </div>
                 
-                <h3 class="text-xl font-black text-[#0D182E] text-center mb-3">Di Luar Jam Kerja Operasional</h3>
-                <p class="text-sm text-gray-500 font-medium text-center mb-6 leading-relaxed">
+                <h3 class="text-xl font-black text-gray-900 dark:text-white text-center mb-3">Di Luar Jam Kerja Operasional</h3>
+                <p class="text-sm text-gray-600 dark:text-slate-300 font-medium text-center mb-6 leading-relaxed">
                     Layanan panggilan langsung (<span class="italic">Live Support</span>) {{ \App\Models\AppSetting::get('app_subtitle', 'PPG UIN Siber Syekh Nurjati') }} saat ini sedang offline.
                 </p>
 
                 {{-- Schedule Box --}}
-                <div class="w-full bg-[#F8F9FA] border border-[#E5E7EB] rounded-xl p-5 mb-6 text-sm">
-                    <div class="font-bold text-[#1C3627] flex items-center space-x-2 mb-3 text-sm">
+                <div class="w-full bg-purple-50/50 dark:bg-slate-800 border border-purple-100 dark:border-slate-700 rounded-xl p-5 mb-6 text-sm">
+                    <div class="font-bold text-purple-900 dark:text-purple-300 flex items-center space-x-2 mb-3 text-sm">
                         <i class="fa-solid fa-clock"></i>
                         <span>Jadwal Jam Kerja Operasional (WIB)</span>
                     </div>
-                    <div class="space-y-1.5 text-gray-600 text-[13px] leading-loose">
-                        <p><span class="font-bold text-[#0D182E]">Senin – Kamis:</span> 08.00–11.30 • 13.00–16.00 WIB</p>
-                        <p><span class="font-bold text-[#0D182E]">Jum'at:</span> 08.00–11.00 • 13.30–16.30 WIB</p>
-                        <p><span class="font-bold text-[#0D182E]">Sabtu & Minggu:</span> Tutup / Libur Operasional</p>
+                    <div class="space-y-1.5 text-gray-700 dark:text-slate-300 text-[13px] leading-loose">
+                        <p><span class="font-bold text-gray-900 dark:text-white">Senin – Kamis:</span> 08.00–11.30 • 13.00–16.00 WIB</p>
+                        <p><span class="font-bold text-gray-900 dark:text-white">Jum'at:</span> 08.00–11.00 • 13.30–16.30 WIB</p>
+                        <p><span class="font-bold text-gray-900 dark:text-white">Sabtu & Minggu:</span> Tutup / Libur Operasional</p>
                     </div>
                 </div>
 
                 {{-- Action Buttons --}}
                 <div class="w-full flex flex-row gap-3 justify-center mb-3">
-                    <a href="{{ route('landing') }}" class="flex-1 bg-[#1C3627] hover:bg-[#152a1e] text-white font-bold py-2.5 rounded-xl flex items-center justify-center space-x-2 transition text-sm">
+                    <a href="{{ route('landing') }}" class="flex-1 bg-purple-700 hover:bg-purple-800 text-white font-bold py-2.5 rounded-xl flex items-center justify-center space-x-2 transition text-sm shadow-md shadow-purple-700/20">
                         <i class="fa-solid fa-book-open"></i>
-                        <span>Buka FAQ & Informasi</span>
+                        <span>Buka FAQ & Info</span>
                     </a>
                     @php $waContact = \App\Models\AppSetting::get('contact_whatsapp'); @endphp
                     @if($waContact)
-                    <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $waContact) }}" target="_blank" class="flex-1 bg-[#65C973] hover:bg-[#52b15f] text-white font-bold py-2.5 rounded-xl flex items-center justify-center space-x-2 transition text-sm">
+                    <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $waContact) }}" target="_blank" class="flex-1 bg-green-600 hover:bg-green-700 text-white font-bold py-2.5 rounded-xl flex items-center justify-center space-x-2 transition text-sm shadow-md shadow-green-600/20">
                         <i class="fa-brands fa-whatsapp text-lg"></i>
                         <span>WhatsApp Admin</span>
                     </a>
                     @else
-                    <a href="{{ route('help-center') }}" class="flex-1 bg-[#65C973] hover:bg-[#52b15f] text-white font-bold py-2.5 rounded-xl flex items-center justify-center space-x-2 transition text-sm">
+                    <a href="{{ route('help-center') }}" class="flex-1 bg-green-600 hover:bg-green-700 text-white font-bold py-2.5 rounded-xl flex items-center justify-center space-x-2 transition text-sm shadow-md shadow-green-600/20">
                         <i class="fa-solid fa-envelope text-lg"></i>
                         <span>Tinggalkan Pesan</span>
                     </a>
                     @endif
                 </div>
-                <button type="button" onclick="closeHelpModals()" class="bg-[#F1F5F9] hover:bg-[#E2E8F0] border border-gray-200 text-gray-700 font-bold py-2 px-6 rounded-xl transition text-sm">
+                <button type="button" onclick="closeHelpModals()" class="bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 border border-gray-200 dark:border-slate-700 text-gray-700 dark:text-slate-300 font-bold py-2 px-6 rounded-xl transition text-sm cursor-pointer">
                     Tutup
                 </button>
             </div>
