@@ -55,6 +55,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/infografis', fn() => view('admin.pengaturan.infografis'))->name('infografis');
         Route::get('/testimoni', fn() => view('admin.pengaturan.testimoni'))->name('testimoni');
         Route::get('/mitra', fn() => view('admin.pengaturan.mitra'))->name('mitra');
+        Route::get('/kontak', fn() => view('admin.pengaturan.kontak'))->name('kontak');
         Route::get('/menu', fn() => view('admin.pengaturan.menu'))->name('menu');
         Route::get('/menu/{menu}/builder', fn($menu) => view('admin.pengaturan.menu-builder', compact('menu')))->name('menu.builder');
     });
