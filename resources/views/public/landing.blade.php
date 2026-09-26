@@ -11,9 +11,6 @@
 <section class="relative overflow-hidden text-white" style="background: linear-gradient(to bottom, #1E1B4B 0%, #2A1556 40%, #1E1B4B 75%, #ffffff 100%); background-size: 100% 610px; background-repeat: no-repeat; background-color: #ffffff;">
     <!-- Ambient dot grid pattern overlay -->
     <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 20% 80%, white 1px, transparent 1px), radial-gradient(circle at 80% 20%, white 1px, transparent 1px); background-size: 50px 50px;"></div>
-    <!-- Ambient glow highlights -->
-    <div class="absolute -right-32 -top-32 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute -left-32 top-1/2 w-96 h-96 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none"></div>
 
     {{-- ANNOUNCEMENT MARQUEE --}}
     @if($announcements->count() > 0)
@@ -126,11 +123,7 @@
     {{-- 2. UNIFIED HERO ACTION CARD (STATUS PERIODE & 5 LANGKAH LAPOR DIRI - FULL PURPLE CANVAS) --}}
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 pt-[416px] pb-4">
         <div class="rounded-3xl p-3 sm:p-4 text-white border border-purple-700/30 overflow-hidden" style="background: linear-gradient(135deg, rgba(30,27,75,0.98) 0%, rgba(42,21,86,0.96) 100%);">
-            <!-- Glow Accents -->
-            <div class="absolute -right-20 -top-20 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-            <!-- BAGIAN 1: STATUS PERIODE LAPOR DIRI -->
+            {{-- BAGIAN 1: STATUS PERIODE LAPOR DIRI --}}
             @if($landingActivePeriod)
             <div class="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3 p-3 rounded-2xl bg-white/[0.08] dark:bg-white/[0.04] backdrop-blur-md border border-white/15 shadow-inner">
                 <div class="flex items-center gap-3">
