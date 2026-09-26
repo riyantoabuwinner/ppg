@@ -125,7 +125,7 @@
 
     {{-- 2. UNIFIED HERO ACTION CARD (STATUS PERIODE & 5 LANGKAH LAPOR DIRI - FULL PURPLE CANVAS) --}}
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 pt-[416px] pb-4">
-        <div class="rounded-3xl p-3 sm:p-4 text-white shadow-2xl shadow-purple-900/30 border border-purple-700/30 overflow-hidden" style="background: linear-gradient(135deg, rgba(30,27,75,0.98) 0%, rgba(42,21,86,0.96) 100%);">
+        <div class="rounded-3xl p-3 sm:p-4 text-white border border-purple-700/30 overflow-hidden" style="background: linear-gradient(135deg, rgba(30,27,75,0.98) 0%, rgba(42,21,86,0.96) 100%);">
             <!-- Glow Accents -->
             <div class="absolute -right-20 -top-20 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl pointer-events-none"></div>
             <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
