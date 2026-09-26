@@ -76,7 +76,7 @@
             <div class="slide {{ $i === 0 ? 'active' : '' }} absolute inset-0 w-full h-full pb-16" style="min-height:460px;">
                 <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{{ asset('storage/' . $slide->gambar) }}');"></div>
 
-                <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(30,27,75,0.65) 0%, rgba(91,33,182,0.50) 60%, rgba(15,23,42,0.40) 100%);"></div>
+                <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(30,27,75,0.40) 0%, rgba(91,33,182,0.30) 60%, rgba(15,23,42,0.20) 100%);"></div>
                 <div class="relative z-10 flex items-start h-full max-w-7xl mx-auto px-6 pt-36 pb-4">
                     <div class="max-w-xl text-white">
                         @if($slide->judul)
@@ -89,7 +89,6 @@
                             @if($slide->tampilkan_tombol)
                             <a href="{{ $slide->link_tombol ?? '#' }}" class="px-6 py-3 !bg-white !text-purple-950 font-bold rounded-xl text-sm shadow-lg hover:bg-purple-50 transition">{{ $slide->teks_tombol ?: 'Selengkapnya' }}</a>
                             @endif
-                            <a href="{{ route('login') }}" class="px-6 py-3 bg-white/20 backdrop-blur border border-white/30 text-white font-semibold rounded-xl text-sm hover:bg-white/30 transition">Masuk Portal Lapor Diri →</a>
                         </div>
                     </div>
                 </div>
