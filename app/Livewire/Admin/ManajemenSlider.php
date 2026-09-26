@@ -12,13 +12,14 @@ class ManajemenSlider extends Component
 
     public $showForm = false;
     public $editId = null;
-    public $judul = '', $subjudul = '', $link_tombol = '', $teks_tombol = 'Selengkapnya', $urutan = 0, $is_active = true;
+    public $judul = '', $subjudul = '', $link_tombol = '', $teks_tombol = 'Selengkapnya', $urutan = 0, $is_active = true, $tampilkan_tombol = true;
     public $gambar_upload = null;
 
     public function openCreate()
     {
-        $this->reset(['editId','judul','subjudul','link_tombol','teks_tombol','urutan','is_active','gambar_upload']);
+        $this->reset(['editId','judul','subjudul','link_tombol','teks_tombol','urutan','is_active','gambar_upload', 'tampilkan_tombol']);
         $this->is_active = true;
+        $this->tampilkan_tombol = true;
         $this->teks_tombol = 'Selengkapnya';
         $this->showForm = true;
     }
@@ -33,6 +34,7 @@ class ManajemenSlider extends Component
         $this->teks_tombol = $s->teks_tombol;
         $this->urutan = $s->urutan;
         $this->is_active = $s->is_active;
+        $this->tampilkan_tombol = $s->tampilkan_tombol;
         $this->gambar_upload = null;
         $this->showForm = true;
     }
@@ -40,7 +42,7 @@ class ManajemenSlider extends Component
     public function save()
     {
         $this->validate([
-            'judul'          => 'required|min:3',
+            'judul'          => 'nullable|string',
             'gambar_upload'  => $this->editId ? 'nullable|image|max:2048' : 'required|image|max:2048',
         ]);
 
@@ -51,6 +53,7 @@ class ManajemenSlider extends Component
             'teks_tombol' => $this->teks_tombol,
             'urutan'      => $this->urutan,
             'is_active'   => $this->is_active,
+            'tampilkan_tombol' => $this->tampilkan_tombol,
         ];
 
         if ($this->gambar_upload) {

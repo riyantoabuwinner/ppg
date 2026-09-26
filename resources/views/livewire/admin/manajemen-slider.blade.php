@@ -19,7 +19,7 @@
             <h3 class="font-bold text-gray-800 text-lg mb-4">{{ $editId ? 'Edit Slide' : 'Tambah Slide Baru' }}</h3>
             <div class="space-y-4">
                 <div>
-                    <label class="text-xs font-semibold text-gray-600">Judul Slide *</label>
+                    <label class="text-xs font-semibold text-gray-600">Judul Slide</label>
                     <input type="text" wire:model="judul" class="w-full border mt-1 px-3 py-2 rounded-lg text-sm" placeholder="Contoh: Selamat Datang Mahasiswa PPG 2025">
                     @error('judul') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
                 </div>
@@ -42,7 +42,7 @@
                         <input type="text" wire:model="link_tombol" class="w-full border mt-1 px-3 py-2 rounded-lg text-sm" placeholder="https://...">
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-3">
+                <div class="grid grid-cols-3 gap-3">
                     <div>
                         <label class="text-xs font-semibold text-gray-600">Urutan Tampil</label>
                         <input type="number" wire:model="urutan" class="w-full border mt-1 px-3 py-2 rounded-lg text-sm">
@@ -51,6 +51,12 @@
                         <label class="flex items-center space-x-2 cursor-pointer">
                             <input type="checkbox" wire:model="is_active" class="rounded">
                             <span class="text-sm font-medium text-gray-700">Aktif / Tampilkan</span>
+                        </label>
+                    </div>
+                    <div class="flex items-end pb-2">
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="checkbox" wire:model="tampilkan_tombol" class="rounded">
+                            <span class="text-sm font-medium text-gray-700">Tampilkan Tombol</span>
                         </label>
                     </div>
                 </div>

@@ -79,16 +79,15 @@
                 <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(30,27,75,0.65) 0%, rgba(91,33,182,0.50) 60%, rgba(15,23,42,0.40) 100%);"></div>
                 <div class="relative z-10 flex items-start h-full max-w-7xl mx-auto px-6 pt-36 pb-4">
                     <div class="max-w-xl text-white">
-                        <div class="inline-flex items-center px-3 py-1 bg-white/15 backdrop-blur rounded-full text-xs font-semibold mb-4 text-purple-100">
-                            PPG UIN Siber Syekh Nurjati Cirebon
-                        </div>
+                        @if($slide->judul)
                         <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight mb-3">{{ $slide->judul }}</h2>
+                        @endif
                         @if($slide->subjudul)
                         <p class="text-purple-100 text-base leading-relaxed mb-6">{{ $slide->subjudul }}</p>
                         @endif
                         <div class="flex flex-wrap gap-3">
-                            @if($slide->link_tombol)
-                            <a href="{{ $slide->link_tombol }}" class="px-6 py-3 !bg-white !text-purple-950 font-bold rounded-xl text-sm shadow-lg hover:bg-purple-50 transition">{{ $slide->teks_tombol }}</a>
+                            @if($slide->tampilkan_tombol)
+                            <a href="{{ $slide->link_tombol ?? '#' }}" class="px-6 py-3 !bg-white !text-purple-950 font-bold rounded-xl text-sm shadow-lg hover:bg-purple-50 transition">{{ $slide->teks_tombol ?: 'Selengkapnya' }}</a>
                             @endif
                             <a href="{{ route('login') }}" class="px-6 py-3 bg-white/20 backdrop-blur border border-white/30 text-white font-semibold rounded-xl text-sm hover:bg-white/30 transition">Masuk Portal Lapor Diri →</a>
                         </div>

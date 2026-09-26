@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Slider extends Model
 {
     protected $guarded = ['id'];
-    protected $casts = ['is_active' => 'boolean'];
+    protected $casts = ['is_active' => 'boolean', 'tampilkan_tombol' => 'boolean'];
 
     public function scopeActive($query) {
         return $query->where('is_active', true)->orderBy('urutan');
