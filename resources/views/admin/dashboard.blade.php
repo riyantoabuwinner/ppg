@@ -6,12 +6,12 @@
 @section('content')
 @php
     use App\Models\User;
-    use App\Models\Ticket;
+    use App\Models\HelpSession;
     $total = User::where('role','mahasiswa')->count();
     $draft = User::where('role','mahasiswa')->where('status_lapor_diri','draft')->count();
     $submitted = User::where('role','mahasiswa')->where('status_lapor_diri','submitted')->count();
     $verified = User::where('role','mahasiswa')->where('status_lapor_diri','verified')->count();
-    $openTickets = Ticket::where('status','open')->count();
+    $openTickets = HelpSession::open()->count();
     $pct = $total > 0 ? round(($verified / $total) * 100) : 0;
 @endphp
 
