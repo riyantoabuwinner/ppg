@@ -8,22 +8,17 @@
 @endphp
 
 {{-- ===== MASTER HERO SECTION: SLIDER + UNIFIED ACTION CARD ===== --}}
-<section class="relative overflow-hidden text-white" style="background: linear-gradient(to bottom, #1E1B4B 0%, #2A1556 40%, #1E1B4B 75%, #ffffff 100%); background-size: 100% 610px; background-repeat: no-repeat; background-color: #ffffff;">
-    <!-- Ambient dot grid pattern overlay -->
-    <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 20% 80%, white 1px, transparent 1px), radial-gradient(circle at 80% 20%, white 1px, transparent 1px); background-size: 50px 50px;"></div>
-    <!-- Ambient glow highlights -->
-    <div class="absolute -right-32 -top-32 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute -left-32 top-1/2 w-96 h-96 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none"></div>
+<section class="relative overflow-hidden bg-white">
 
     {{-- ANNOUNCEMENT MARQUEE --}}
     @if($announcements->count() > 0)
     <div class="absolute top-[10px] left-0 right-0 z-40 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pointer-events-none">
-        <div class="pointer-events-auto bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
-            <div class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-[10px] sm:text-[11px] font-extrabold px-4 sm:px-5 py-2 uppercase tracking-wider flex-shrink-0 z-10 flex items-center shadow-[4px_0_15px_rgba(0,0,0,0.2)]">
+        <div class="pointer-events-auto bg-white shadow border border-purple-100 rounded-full flex items-center overflow-hidden">
+            <div class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-[10px] sm:text-[11px] font-extrabold px-4 sm:px-5 py-2 uppercase tracking-wider flex-shrink-0 z-10 flex items-center">
                 <i class="fa-solid fa-bullhorn mr-2 animate-pulse"></i> <span class="hidden sm:inline">Pengumuman</span>
             </div>
             <div class="relative flex-1 overflow-hidden flex items-center py-2 h-full" style="-webkit-mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);">
-                <div class="animate-marquee-announcement flex items-center whitespace-nowrap text-white text-xs sm:text-sm">
+                <div class="animate-marquee-announcement flex items-center whitespace-nowrap text-gray-700 text-xs sm:text-sm">
                     @foreach($announcements as $ann)
                         <span class="mx-6 flex items-center">
                             @if($ann->tipe == 'penting')
@@ -46,7 +41,7 @@
                             @else
                                 <span class="w-2 h-2 rounded-full bg-blue-400 mr-2 shadow-[0_0_8px_rgba(96,165,250,0.8)]"></span>
                             @endif
-                            <span class="font-medium hover:text-purple-200 transition-colors cursor-pointer">{!! $ann->judul !!}</span>
+                            <span class="font-medium hover:text-purple-600 transition-colors cursor-pointer">{!! $ann->judul !!}</span>
                         </span>
                     @endforeach
                 </div>
@@ -110,12 +105,7 @@
             </button>
             @endif
 
-            {{-- Curved purple accent --}}
-            <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10 pointer-events-none">
-                <svg class="relative block w-full h-10 sm:h-16 lg:h-20" viewBox="0 0 1440 100" preserveAspectRatio="none">
-                    <path d="M0,0 C380,75 1060,75 1440,0 L1440,100 L0,100 Z" fill="rgba(168, 85, 247, 0.20)"></path>
-                </svg>
-            </div>
+
         </div>
     @else
     {{-- Default Hero jika tidak ada slide --}}
