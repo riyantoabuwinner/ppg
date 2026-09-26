@@ -57,9 +57,9 @@
         .nav-link { transition: color 0.2s; }
         .nav-link:hover { color: #A78BFA; }
         /* Slider */
-        .slide { display: none; animation: fadeIn 0.6s ease; }
+        .slide { display: none; animation: slideIn 0.6s ease; }
         .slide.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: scale(1.02); } to { opacity: 1; transform: scale(1); } }
+        @keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
         /* Card hover */
         .article-card { transition: transform 0.2s, box-shadow 0.2s; }
         .article-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(124,58,237,0.15); }
@@ -690,7 +690,7 @@
         </div>
 
         <div class="border-t border-purple-800/80 dark:border-slate-800 pt-6 text-center text-xs text-purple-300 dark:text-slate-400">
-            &copy; {{ date('Y') }} UPT TIK UIN Siber Syekh Nurjati Cirebon. Seluruh hak cipta dilindungi.
+            &copy; {{ date('Y') }} PUSTIKOM UIN Siber Syekh Nurjati Cirebon
         </div>
     </div>
 </footer>
