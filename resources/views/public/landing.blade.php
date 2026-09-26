@@ -87,7 +87,7 @@
                         @endif
                         <div class="flex flex-wrap gap-3">
                             @if($slide->tampilkan_tombol)
-                            <a href="{{ $slide->link_tombol ?? '#' }}" class="px-6 py-3 !bg-white !text-purple-950 font-bold rounded-xl text-sm shadow-lg hover:bg-purple-50 transition">{{ $slide->teks_tombol ?: 'Selengkapnya' }}</a>
+                            <a href="{{ $slide->link_tombol ?? '#' }}" class="px-6 py-3 !bg-white !text-purple-950 font-bold rounded-xl text-sm hover:bg-purple-50 transition">{{ $slide->teks_tombol ?: 'Selengkapnya' }}</a>
                             @endif
                         </div>
                     </div>
